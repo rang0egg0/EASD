@@ -13,6 +13,8 @@ conda activate joysmamba
 # Load the necessary modules
 module load bcftools
 
+cd /home/durwa004/stock526/Case_Control/data
+
 # Define input and output file paths
 INPUT_VCF="EASD_CaseControl.goldenPath.decomposed.snpeff.snpsift.CC.vcf.gz"
 OUTPUT_VCF="EASD_CaseControl.goldenPath.decomposed.snpeff.snpsift.CC.ID.vcf.gz"
