@@ -45,3 +45,15 @@ SnpEff.hml.txt
 ipython -i ~/Case_Control/scripts/get_type_of_variant.ipy -- -d ~/Case_Control/data/final.vcf.gz -p SnpEff
 
 ```
+
+### Step 1.8: (Python) Prune variants that do not meet P-Value thresholds
+Retains only variants where at least one of the P-Values calculated in Step 1.2 meets the significance threshold. The significance threshold is based on a Bonferroni correction (0.05/x), x = the total number of variants.
+
+#### Infile
+SnpEff.hml.txt
+
+#### Outfile
+ANSAD_SnpSift_case_control.txt
+```
+sbatch SnpSiftResults.py
+```
