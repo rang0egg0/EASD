@@ -30,24 +30,18 @@ sbatch bcftools_generate_SNPids.slurm
 tabix EASD_CaseControl.goldenPath.decomposed.snpeff.snpsift.CC.ID.vcf.gz
 ```
 
-### Step 1.4: (slurm, PLINK) Create binary PLINK files for data
-creates PLINK binary outputs from VCF and adds in phenotype (case/control status) data
-#### Infile
-EASD_CaseControl.goldenPath.decomposed.snpeff.snpsift.CC.ID.vcf.gz
-#### Outfile
-EASD.(bim, bed, fam, log, map, nosex, ped)
-```
-sbatch vcf_to_PLINK.slurm
-```
+### Rename 
+#### This to That
+EASD_CaseControl.goldenPath.decomposed.snpeff.snpsift.CC.ID.vcf.gz ---> final.vcf.gz
+##### Also i just copied data from the previous attempt
+for some reason I couldnt get above scripts to work so 😭🤪🔫
 
-### Step 1.5: (slurm, PLINK) Perform quality control on PLINK output
-performs QC without regard to Hardy-Weinberg equilibrium and removes variants that do not meet QC standards
+### Step 1.4: (Python) Get type of variant
 #### Infile
-SCD.     
-#### Outfile
-SCD.QC.
+final.vcf.gz
+#### Outfile 
+SnpEff.hml.txt
 ```
-cd PLINK
-sbatch plinkQC.slurm
-```
+ipython -i ~/Case_Control/scripts/get_type_of_variant.ipy -- -d ~/Case_Control/data/final.vcf.gz -p SnpEff
 
+```
