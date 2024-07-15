@@ -15,7 +15,7 @@
 conda activate joysmamba
 
 # Unzip the input VCF file
-gunzip /home/durwa004/stock526/Aim3/case_control/data/SCD_CaseControl.goldenPath.vcf.gz
+gunzip /home/durwa004/stock526/Aim3/CaseControl/EASD_CaseControl.goldenPath.vcf.gz
 
 # Load the Java OpenJDK module (required to run SnpSift)
 module load java/openjdk-17.0.2
